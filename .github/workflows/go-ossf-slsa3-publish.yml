@@ -37,6 +37,9 @@ jobs:
         arch:
           - amd64
           - arm64
+        exclude:
+          - os: windows
+            arch: arm64
 
     uses: slsa-framework/slsa-github-generator/.github/workflows/builder_go_slsa3.yml@v1.4.0
     with:
