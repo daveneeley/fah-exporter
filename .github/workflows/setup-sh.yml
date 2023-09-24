@@ -1,0 +1,13 @@
+name: Run setup.sh
+on: [push]
+jobs:
+    Run-Setup:
+        runs-on: ubuntu-latest
+        steps:
+            - name: check out repository
+              uses: actions/checkout@v4
+            - uses: actions/setup-go@v4
+              with:
+                check-latest: true
+            - name: build all
+              run: ./setup.sh build-all
